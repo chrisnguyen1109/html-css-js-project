@@ -1,0 +1,54 @@
+:root {
+    --white-color: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    align-items: center;
+}
+
+.counter-body {
+    height: 100vh;
+    background-color: #8a66b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter {
+    background-color: #6b38b6;
+    color: var(--white-color);
+    font-size: 4rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    padding: 2rem 0;
+    margin: 4rem;
+    line-height: initial;
+    width: 25rem;
+}
+
+.counter p {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1.6rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.counter h2 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0 2rem;
+}

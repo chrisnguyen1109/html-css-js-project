@@ -1,0 +1,142 @@
+:root {
+    --white-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+}
+
+body {
+    background-image: linear-gradient(
+        45deg,
+        rgb(65, 88, 208) 0%,
+        rgb(200, 80, 192) 50%,
+        rgb(255, 204, 112) 100%
+    );
+    height: 100vh;
+    display: flex;
+}
+
+.btn-open-modal {
+    margin: auto;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    padding: 2rem 4rem;
+    cursor: pointer;
+    box-shadow: 0 0 5px #aba4a4;
+    background-color: var(--white-color);
+    transition: background-color 0.25s linear;
+    border-radius: 6px;
+}
+
+.btn-open-modal:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    transition: opacity 0.25s linear;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__inner {
+    margin: auto;
+    margin-top: 200px;
+    min-width: 45rem;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 9999;
+    animation: showModal linear 0.2s;
+}
+
+@keyframes showModal {
+    from {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal__header {
+    background-color: #e26e70;
+    color: var(--white-color);
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.6rem 1.4rem;
+}
+
+.modal__header svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.modal__header svg:hover {
+    opacity: 0.8;
+}
+
+.modal__body {
+    padding: 1.8rem 1.4rem;
+}
+
+.modal__body h2 {
+    color: #e26e70;
+    margin-bottom: 1.4rem;
+    font-size: 2.4rem;
+}
+
+.modal__body p {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 400;
+}
+
+.modal__footer {
+    text-align: right;
+    padding: 1.2rem 1.4rem;
+}
+
+.modal__footer button {
+    outline: none;
+    border: none;
+    background-color: #e26e70;
+    color: var(--white-color);
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 1rem 2rem;
+}
+
+.modal__footer button:hover {
+    background-color: rgba(226, 110, 112, 0.9);
+}
+
+.hide {
+    display: none;
+}

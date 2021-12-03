@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    --primary-color: #0a7cf1;
+    --background-color: #eee;
+    --text-color: #333;
+    --box-color: #dadada;
+    background-color: var(--background-color);
+}
+
+body.dark {
+    --primary-color: #4daf54;
+    --background-color: #2d2c2d;
+    --text-color: #fff;
+    --box-color: #3b3a3b;
+    background-color: var(--background-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+    align-items: center;
+}
+
+.nav-title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: initial;
+}
+
+.nav-toggle label {
+    width: 6rem;
+    height: 3rem;
+    border-radius: 20px;
+    background-color: #aaa;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-toggle label::after {
+    position: absolute;
+    border-radius: 50%;
+    content: '';
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #fff;
+    transition: all 0.25s linear;
+}
+
+.nav-toggle input:checked ~ label {
+    background-color: var(--primary-color);
+}
+
+.nav-toggle input:checked ~ label::after {
+    transform: translateX(calc(100% + 0.4rem));
+}
+
+main {
+    margin: 10rem auto;
+    width: 90%;
+    max-width: 120rem;
+    align-items: center;
+}
+
+.body-title {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 6rem;
+    color: var(--primary-color);
+}
+
+.body-box {
+    background-color: var(--box-color);
+    border-radius: 10px;
+    padding: 4rem;
+}
+
+.body-paragraph {
+    font-size: 2rem;
+    color: var(--text-color);
+    line-height: 2.8rem;
+    margin-bottom: 5rem;
+}
+
+.body-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    color: #dadada;
+    font-size: 2.2rem;
+    font-weight: 600;
+    transition: all 0.1s ease;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}

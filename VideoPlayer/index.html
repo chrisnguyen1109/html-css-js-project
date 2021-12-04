@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="player">
+        <video class="player-video"
+            src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4"></video>
+        <div class="player-control">
+            <button class="player-control__toggle">
+                <i class="bx bx-play"></i>
+            </button>
+            <p class="player-control__time">00:00 / 00:00</p>
+            <div class="player-control__progress">
+                <span class="player-control__progress--filled"></span>
+            </div>
+            <div class="player-control__skip">
+                <button data-time="-5" class="player-control__back">« 5s</button>
+                <button data-time="5" class="player-control__next">5s »</button>
+            </div>
+            <div class="player-control__volume">
+                <i class="bx bxs-volume-full"></i>
+                <!-- <i class='bx bxs-volume-mute'></i> -->
+                <input type="range" min="0" max="1" step="0.1" value="1">
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>

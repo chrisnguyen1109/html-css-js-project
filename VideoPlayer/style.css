@@ -1,0 +1,138 @@
+:root {
+    --primary-color: #9c27b0;
+    --white-color: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #7c1599, #7e4ae8);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.player {
+    width: 80rem;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.player-video {
+    width: 100%;
+    cursor: pointer;
+}
+
+.player-control {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
+    transform: translateY(100%);
+    transition: all 0.25s linear;
+}
+
+.player-control.active {
+    transform: unset;
+}
+
+.player-control > * {
+    margin: 0.5rem;
+}
+
+.player-control__toggle {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.player-control__toggle i {
+    font-size: 4rem;
+    color: var(--white-color);
+}
+
+.player-control__toggle i:hover {
+    color: var(--primary-color);
+}
+
+.player-control__time {
+    font-size: 1.8rem;
+    color: var(--white-color);
+}
+
+.player-control__progress {
+    flex: 1;
+    position: relative;
+    height: 1.2rem;
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.player-control__progress--filled {
+    position: absolute;
+    background-color: var(--primary-color);
+    width: 0%;
+    height: 100%;
+}
+
+.player-control__skip {
+    line-height: 1.8rem;
+}
+
+.player-control__back {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    margin-right: 0.5rem;
+}
+
+.player-control__next {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    margin-left: 0.5rem;
+}
+
+.player-control__back:hover,
+.player-control__next:hover {
+    color: var(--primary-color);
+}
+
+.player-control__volume {
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
+}
+
+.player-control__volume i {
+    font-size: 1.6rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.player-control__volume input {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}

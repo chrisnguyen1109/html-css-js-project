@@ -32,7 +32,7 @@ const start = () => {
 rollBtn.addEventListener('click', () => {
     if (over) return;
 
-    const random = Math.floor(Math.random() * 6) + 1;
+    const random = Math.trunc(Math.random() * 6) + 1;
     const player = $('.player--active');
     const playerNumber = player === $('.player--0') ? 0 : 1;
     const currentScore = $(`#current--${playerNumber}`);

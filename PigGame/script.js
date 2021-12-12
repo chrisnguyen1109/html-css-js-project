@@ -56,6 +56,7 @@ holdBtn.addEventListener('click', () => {
     const playerNumber = player === $('.player--0') ? 0 : 1;
     const score = $(`#score--${playerNumber}`);
     const currentScore = $(`#current--${playerNumber}`);
+    const otherPlayer = $(`.player--${+!playerNumber}`);
 
     score.textContent = +score.textContent + +currentScore.textContent;
     currentScore.textContent = 0;
@@ -66,7 +67,6 @@ holdBtn.addEventListener('click', () => {
         winner.classList.add('player--winner');
     }
 
-    const otherPlayer = $(`.player--${+!playerNumber}`);
     switchActive(otherPlayer);
 });
 

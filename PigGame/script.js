@@ -5,7 +5,7 @@ const rollBtn = $('.btn--roll');
 const holdBtn = $('.btn--hold');
 const dice = $('.dice');
 
-const goal = 20;
+const goal = 100;
 let winner;
 let over;
 
@@ -23,10 +23,9 @@ const start = () => {
     $('#current--1').textContent = '0';
 
     if (winner) {
-        winner.classList.remove('player--winner');
         switchActive(winner);
     } else {
-        $('.player--0').classList.add('player--active');
+        switchActive($('.player--0'));
     }
 };
 

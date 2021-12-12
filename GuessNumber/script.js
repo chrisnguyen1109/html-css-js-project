@@ -59,9 +59,11 @@ checkBtn.addEventListener('click', () => {
 
         if (guess < minRange || guess > maxRange) throw new Error('Out of range');
 
-        if (guess - secret > 2) throw new Error('Too high');
+        if (guess - secret > 3) throw new Error('Too high');
+        if (guess - secret > 1) throw new Error('High');
 
-        if (secret - guess > 2) throw new Error('Too low');
+        if (secret - guess > 3) throw new Error('Too low');
+        if (secret - guess > 1) throw new Error('Low');
 
         if (+guess === secret) {
             checkOver = true;

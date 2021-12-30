@@ -59,7 +59,7 @@ const renderUnderline = () => {
                 } word in ${getTimerTime()} seconds`
             );
             renderWorkspace();
-        }, 0);
+        }, 1);
         return;
     }
     for (let i = 0; i < quoteArr[countText].length; i++) {
@@ -112,6 +112,7 @@ const convertWrong = () => {
 
 typeInput.addEventListener('input', e => {
     let quoteArrLength = quoteArr[countText].length;
+
     if (e.data === ' ') {
         if (typeInput.value.trim()) {
             if (quoteArrLength !== typeInput.value.length - 1 || !checkCorrect()) {
@@ -128,13 +129,16 @@ typeInput.addEventListener('input', e => {
         return;
     }
 
-    if (e.inputType === 'deleteContentBackward') {
-        count--;
-        workspaceArr[count].classList.remove('highlight--right', 'highlight--wrong');
+    if (
+        quoteArrLength < typeInput.value.length ||
+        (e.inputType === 'deleteContentBackward' && quoteArrLength === typeInput.value.length)
+    ) {
         return;
     }
 
-    if (quoteArrLength < typeInput.value.length) {
+    if (e.inputType === 'deleteContentBackward') {
+        count--;
+        workspaceArr[count].classList.remove('highlight--right', 'highlight--wrong');
         return;
     }
 
